@@ -1,0 +1,34 @@
+{
+  "shopName": "Krishna Enterprises",
+  "address": "Karela Bazar, Near PNB Bank, Patti Kohdaur Road, Patti - 230135, Uttar Pradesh",
+  "whatsapp": "919930674906",
+  "lastUpdated": "16 Nov 2026",
+  "products": [
+    {
+      "id": "KE-001",
+      "brand": "iQOO",
+      "name": "iQOO Z11 5G",
+      "variant": "Aurora Green (8GB+128GB)",
+      "colorHex": "#10b981",
+      "renderType": "phone-triple-ring",
+      "price": 39999,
+      "mrp": 42999,
+      "source": "Amazon.in",
+      "stock": 1,
+      "status": "In Stock",
+      "eta": "Ready at Karela Bazar Counter",
+      "imageUrl": "https://m.media-amazon.com/images/I/61+Q6Rh3OQL._SX679_.jpg",
+      "highlights": [
+        "MediaTek Dimensity 7500 Turbo 5G (1.2Mn+ AnTuTu)",
+        "6.78\" 1.5K 144Hz 3D Curved AMOLED (2000 nits HBM)",
+        "7050mAh BlueVolt Battery + 3800mm² VC Cooling",
+        "50MP Sony IMX882 OIS + 32MP 4K Selfie + IP68/IP69"
+      ],
+      "specs": {
+        "Processor": "MediaTek Dimensity 7500 Turbo (4nm)",
+        "Display": "1.5K 144Hz 3D Curved AMOLED",
+        "Battery": "7050mAh BlueVolt Durability"
+      }
+    }
+  ]
+}
