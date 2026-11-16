@@ -1,0 +1,54 @@
+name: Sync Krishna Enterprises Stock & Deploy
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - '**.xlsx'
+      - 'sync_stock.py'
+      - 'index.html'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  sync-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python Dependencies
+        run: |
+          pip install pandas openpyxl requests beautifulsoup4 duckduckgo-search
+
+      - name: Run Python Stock & Amazon/Flipkart Scraper
+        run: python sync_stock.py
+
+      - name: Commit Updated stock_data.json
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "Krishna Enterprises Stock Bot"
+          git add stock_data.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto-update stock_data.json from Excel & Amazon/Flipkart"
+          git push
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

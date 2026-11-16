@@ -1,0 +1,6 @@
+├── .github/
+│   └── workflows/
+│       └── update-store.yml
+├── index.html
+├── sync_stock.py
+└── stock_data.json
